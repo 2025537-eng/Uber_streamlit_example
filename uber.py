@@ -25,3 +25,9 @@ data_load_state.text("Done!")
 if st.checkbox("SHOW RAW DATA"):
 	st.subheader("RAW DATA")
 	st.write(data)
+
+st.subheader("Number of Pickups Per Hour")
+hist_values=np.histogram(data[DATE_COLUMN].dt.hour,
+			bins=24, range=(0,24))[0]
+
+st.bar_chart(hist_values)
