@@ -21,3 +21,7 @@ def load_data(nrows):
 data_load_state=st.text("data Loading...")
 data=load_data(10000)
 data_load_state.text("Done!")
+
+if st.checkbox("SHOW RAW DATA"):
+	st.subheader("RAW DATA")
+	st.write(data)
